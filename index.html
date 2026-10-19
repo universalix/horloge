@@ -176,6 +176,13 @@ body.opt-halves:not(.inMode) #minBadge.onMark { display: none; }
 .seg button { flex: 1; border-radius: 12px; padding: 10px 6px; font-size: 1rem; background: var(--bg); }
 .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 /* Bouton et panneau des paramètres */
+.avisTop {
+  position: fixed; z-index: 5; text-decoration: none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.02em;
+  padding: 9px 14px; border-radius: 999px; background: var(--minute); color: var(--on-accent);
+  top: calc(12px + env(safe-area-inset-top, 0px)); left: calc(12px + env(safe-area-inset-left, 0px));
+}
+.avisTop:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+body.opt-noavis .avisTop { display: none; }
 .gear {
   position: fixed; z-index: 5; padding: 10px; border-radius: 50%; line-height: 0; color: var(--muted);
   top: calc(10px + env(safe-area-inset-top, 0px)); right: calc(10px + env(safe-area-inset-right, 0px));
@@ -318,6 +325,8 @@ button.toggle[aria-pressed="true"] { border-color: var(--track); }
   <button id="backBtn" type="button" class="primary invisible">Revenir à l'heure</button>
 </div>
 
+<a id="avisTop" class="avisTop" href="https://grist.numerique.gouv.fr/o/docs/forms/x3tDAPh2KcFpDEz842k1mf/4" target="_blank" rel="noopener">Donner mon avis</a>
+
 <button id="settingsBtn" type="button" class="gear" aria-label="Paramètres" aria-expanded="false">
   <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6a.5.5 0 0 0 .1-.6l-2-3.5a.5.5 0 0 0-.6-.2l-2.5 1a7.4 7.4 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.4l-.4 2.7a7.4 7.4 0 0 0-1.7 1l-2.5-1a.5.5 0 0 0-.6.2l-2 3.5a.5.5 0 0 0 .1.6L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6a.5.5 0 0 0-.1.6l2 3.5c.1.2.4.3.6.2l2.5-1c.5.4 1.1.7 1.7 1l.4 2.6c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.4l.4-2.7c.6-.3 1.2-.6 1.7-1l2.5 1c.2.1.5 0 .6-.2l2-3.5a.5.5 0 0 0-.1-.6L19.4 13ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
 </button>
@@ -369,6 +378,8 @@ button.toggle[aria-pressed="true"] { border-color: var(--track); }
       <button type="button" class="toggle choice" role="radio" data-theme-v="evening" aria-checked="false" aria-pressed="false"><span class="lbl">Sombre le soir (20 h – 7 h)</span><span class="radio" aria-hidden="true"></span></button>
     </div>
     <div class="toggles">
+      <button type="button" class="toggle" data-opt="noavis" aria-pressed="false"><span class="lbl">Masquer le bouton « Donner mon avis »</span><span class="sw" aria-hidden="true"></span></button>
+      <p class="optNote">Pratique pour faire tester l'horloge à quelqu'un sans ce bouton à l'écran. Le formulaire reste accessible plus bas dans les paramètres.</p>
       <button id="wakeBtn" type="button" class="toggle" aria-pressed="false"><span class="lbl">Garder l'écran allumé</span><span class="sw" aria-hidden="true"></span></button>
       <p class="optNote">Empêche l'iPhone de se mettre en veille tant que l'horloge est ouverte, pour suivre un temps restant sans toucher l'écran. Consomme de la batterie : à utiliser de préférence branché. Se désactive à chaque fermeture de l'horloge.</p>
     </div>
@@ -901,7 +912,7 @@ setTheme(theme, false);
 
 
 // Options mémorisées sur l'appareil ; toutes désactivées au premier lancement
-const OPTS = ["classic", "noloupes", "hands", "sec", "halves", "date", "days"];
+const OPTS = ["classic", "noloupes", "hands", "sec", "halves", "date", "days", "noavis"];
 const opts = {};
 let saved = {};
 try { saved = JSON.parse(localStorage.getItem("horlogeOptions") || "{}"); } catch (_) {}
