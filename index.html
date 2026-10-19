@@ -1,0 +1,952 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Horloge des durées</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Horloge">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html, body { margin: 0; }
+body { font: 14px system-ui, sans-serif; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Une seule horloge centrée, lisible de loin ; disques pleins comme un Time Timer */
+:root {
+  --bg: #f6f5f2;
+  --fg: #22262b;
+  --muted: #6c7178;
+  --track: #e4e2dc;
+  --hour: #c63a25;      /* petite aiguille : disque intérieur */
+  --minute: #2a6db5;    /* grande aiguille : disque extérieur */
+  --sec: #8a5300;       /* points des secondes */
+  --dot-off: #d5d2ca;
+  --face: #ffffff;
+  --on-accent: #ffffff; /* texte sur les loupes */
+  --scrim: rgba(20, 22, 26, 0.4);
+  --past: #e2f0e4;     /* moitié droite : « et » */
+  --past-ink: #27703a; --to-ink: #6b4fa0;
+  --to: #ece5f3;       /* moitié gauche : « moins » */
+  --font: Verdana, "Verdana Pro", Tahoma, "DejaVu Sans", sans-serif;   /* police lisible pour les dys */
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a; --fg: #eceae5; --muted: #9a9ea5; --track: #2a2d32;
+    --hour: #ef5a43; --minute: #5b9fe0; --sec: #f2b630; --dot-off: #33363c; --face: #1d2024; --on-accent: #15171a; --past: #1f2e24; --to: #2a2433; --past-ink: #7cc48f; --to-ink: #b9a3e3;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a; --fg: #eceae5; --muted: #9a9ea5; --track: #2a2d32;
+  --hour: #ef5a43; --minute: #5b9fe0; --sec: #f2b630; --dot-off: #33363c; --face: #1d2024; --on-accent: #15171a; --past: #1f2e24; --to: #2a2433; --past-ink: #7cc48f; --to-ink: #b9a3e3;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px;
+  box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+}
+.clock { width: min(100vw - 24px, 66vh, 600px); aspect-ratio: 1; max-width: 100%; }
+.clock svg {
+  width: 100%; height: 100%; display: block;
+  -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+  touch-action: manipulation; cursor: pointer;
+}
+.readout { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex: none; }
+.label { color: var(--fg); font-size: 1.125rem; height: 1.4em; line-height: 1.4em; white-space: nowrap; letter-spacing: 0.02em; }
+.digital {
+  font-size: clamp(2rem, 8.5vw, 3.2rem); font-weight: 700; letter-spacing: 0.02em; gap: 0.3em;
+  font-variant-numeric: tabular-nums; line-height: 1;
+  height: 1.1em; display: flex; align-items: center; justify-content: center; white-space: nowrap;
+}
+.digital .h { color: var(--hour); }
+.digital .m { color: var(--minute); }
+.digital .s { color: var(--sec); font-size: 0.65em; font-weight: 700; }
+.digital small { font-size: 0.5em; font-weight: 400; color: var(--muted); margin-left: 0.12em; }
+.digital .s small { font-size: 0.8em; }
+.digital .sep { color: var(--muted); }
+.oral { font-size: min(1.2rem, 4.8vw); height: 2.8em; line-height: 1.4em; text-wrap: balance; display: flex; align-items: center; justify-content: center; text-align: center; letter-spacing: 0.02em; color: var(--fg); }
+body:not(.opt-halves) .oral { display: none; }
+.oral .moment { color: var(--muted); }
+.oral .nw { white-space: nowrap; }
+.oral .et { color: var(--past-ink); font-weight: 700; }
+.oral .moins { color: var(--to-ink); font-weight: 700; }
+.sub { color: var(--muted); font-size: 1.125rem; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; height: 1.4em; line-height: 1.4em; white-space: nowrap; }
+.clock, .controls, .hint, .legend { flex: none; }
+.hint { min-height: 3em; }
+.invisible { visibility: hidden; }
+.sub b { color: var(--fg); font-weight: 600; }
+.hint { color: var(--fg); font-size: 1.05rem; max-width: 34em; text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
+.legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; color: var(--muted); font-size: 1rem; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+button {
+  font: inherit; font-size: 1rem; color: var(--fg); background: var(--face);
+  border: 1px solid var(--track); border-radius: 999px; padding: 8px 16px; cursor: pointer;
+}
+button[aria-pressed="true"] { border-color: var(--fg); }
+button.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+button:focus-visible { outline: 3px solid var(--minute); outline-offset: 2px; }
+.num { font-family: var(--font); font-weight: 600; fill: var(--fg); transition: opacity .2s; }
+.halvesLegend { display: flex; width: min(100vw - 24px, 66vh, 600px); max-width: 100%; flex: none; margin-bottom: -16px; }
+body:not(.opt-halves) .halvesLegend { display: none; }
+body.inMode .halvesLegend { visibility: hidden; }  /* inutile en temps restant, place gardée */
+.halvesLegend span { flex: 1; text-align: center; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; padding: 6px 0 14px; border-radius: 14px 14px 0 0; }
+.halvesLegend .moins { color: var(--to-ink); background: var(--to); }
+.halvesLegend .et { color: var(--past-ink); background: var(--past); }
+.halfLabel.et { fill: var(--past-ink); }
+.halfLabel.moins { fill: var(--to-ink); }
+.parts { opacity: 0; transition: opacity .35s; }
+.parts.on { opacity: 1; }
+.hollow { fill: var(--face); }
+.hollow.on { opacity: 0.62; }
+.badgeText { font-family: var(--font); font-size: 17px; font-weight: 700; fill: var(--on-accent); font-variant-numeric: tabular-nums; }
+.partialLabel { display: none; }
+.partialLabel rect { fill: var(--minute); stroke: var(--face); stroke-width: 3; }
+.partialLabel text { font-family: var(--font); font-size: 16px; font-weight: 700; fill: var(--on-accent); font-variant-numeric: tabular-nums; }
+body:not(.opt-noloupes) .partialLabel.show { display: inline; }
+#partialHour rect { fill: var(--hour); }
+body.opt-halves:not(.inMode) #partialMin.onMark { display: none; }
+.resteW { font-size: 12px; font-weight: 700; letter-spacing: 0.02em; }
+.hourPart { font-size: 14px; }
+.hourPart .hUnit { font-size: 11px; }
+.partLabel { font-family: var(--font); font-size: 17px; font-weight: 700; fill: var(--face); font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) { .parts { transition: none; } }
+.num.off { opacity: 0.22; font-weight: 400; }
+.num.target { fill: var(--hour); opacity: 1; font-weight: 700; }
+.dim { opacity: 0.25; transition: opacity .3s; }
+#holdRing { transition: none; }
+#holdRing.go { transition: stroke-dashoffset 0.55s linear; }
+@media (prefers-reduced-motion: reduce) { #holdRing.go { transition: none; } }
+
+[hidden] { display: none !important; }
+/* Options : tout est masqué au premier lancement, chaque option ajoute un élément */
+body:not(.opt-sec) #dots, body:not(.opt-sec) #secHand, body:not(.opt-sec) .digital .s { display: none; }
+body:not(.opt-hands) #hourHand, body:not(.opt-hands) #minHand, body:not(.opt-hands) .cap { display: none; }
+/* Montre classique : pas de disques (sauf en mode temps restant), aiguilles toujours visibles */
+body.opt-classic:not(.inMode) #minWedge, body.opt-classic:not(.inMode) #hourWedge { display: none; }
+body.opt-classic:not(.inMode) .trk { fill: var(--face); }
+/* zone à toucher repérée par un anneau bleu très clair */
+body.opt-classic:not(.inMode) #minTrack { fill: var(--minute); fill-opacity: 0.13; }
+body.opt-classic:not(.inMode) #minTicks line { stroke: var(--muted); }
+body.opt-classic #hourHand, body.opt-classic #minHand, body.opt-classic .cap { display: inline !important; }
+#minBadge, #hourBadge { display: none; } /* remplacées par les loupes sur le bord des disques */
+body:not(.opt-halves) #halves, body:not(.opt-halves) #oralMarks, body.inMode #oralMarks { display: none; }
+.oralMark rect, .oralMark circle { fill: var(--face); stroke-width: 2; }
+.oralMark.small text { font-size: 14px; }
+.oralMark text { font-family: var(--font); font-size: 13px; font-weight: 700; }
+.oralMark.et rect, .oralMark.et circle { stroke: var(--past-ink); } .oralMark.et text { fill: var(--past-ink); }
+.oralMark.moins rect, .oralMark.moins circle { stroke: var(--to-ink); } .oralMark.moins text { fill: var(--to-ink); }
+/* quand la grande aiguille y est, l'étiquette remplace la loupe */
+.oralMark.now.et rect, .oralMark.now.et circle { fill: var(--past-ink); } .oralMark.now.moins rect, .oralMark.now.moins circle { fill: var(--to-ink); }
+.oralMark.now text { fill: var(--face); }
+.oralMark .arrow { stroke-width: 2.5; stroke-linecap: round; }
+.oralMark.et .arrow { stroke: var(--past-ink); } .oralMark.moins .arrow { stroke: var(--to-ink); }
+body.opt-halves:not(.inMode) #minBadge.onMark { display: none; }
+/* Frise des jours */
+.days { display: flex; align-items: stretch; justify-content: center; gap: 4px; width: min(100%, 460px); flex: none; height: 4.4rem; }
+.day {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  border-radius: 12px; font-size: 1rem; letter-spacing: 0.02em; color: var(--fg);
+}
+.day.past, .day.past .ds { color: var(--muted); font-weight: 400; }
+.day.wkend .dn { color: var(--muted); }
+.day.today { flex: 2.2 1 0; background: var(--face); border: 2.5px solid var(--fg); font-weight: 700; font-size: 1.15rem; padding: 0 6px; }
+.day .ds { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+.days.three .day { flex: 1 1 0; }
+.days.three .day.today { flex: 1.5 1 0; font-size: 1.4rem; gap: 6px; }
+.day .bar { width: 85%; height: 9px; border-radius: 5px; background: var(--track); overflow: hidden; }
+.day .bar i { display: block; height: 100%; width: 0; background: var(--hour); border-radius: 5px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.seg button { flex: 1; border-radius: 12px; padding: 10px 6px; font-size: 1rem; background: var(--bg); }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+/* Bouton et panneau des paramètres */
+.gear {
+  position: fixed; z-index: 5; padding: 10px; border-radius: 50%; line-height: 0; color: var(--muted);
+  top: calc(10px + env(safe-area-inset-top, 0px)); right: calc(10px + env(safe-area-inset-right, 0px));
+}
+.sheet {
+  position: fixed; inset: 0; z-index: 20; background: var(--scrim);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.sheetInner {
+  background: var(--face); color: var(--fg); width: 100%; max-width: 440px; box-sizing: border-box;
+  border-radius: 20px 20px 0 0; max-height: 85%; overflow-y: auto;
+  padding: 18px max(18px, env(safe-area-inset-right, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px));
+  display: flex; flex-direction: column; gap: 14px;
+}
+.rdvInput { font: inherit; font-size: 2.4rem; font-weight: 700; text-align: center; padding: 10px; border-radius: 14px; border: 2px solid var(--track); background: var(--bg); color: var(--fg); width: 100%; box-sizing: border-box; font-variant-numeric: tabular-nums; }
+.rdvOk { padding: 14px; font-size: 1.125rem; border-radius: 14px; }
+.readout { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; cursor: pointer; transition: transform .2s; }
+.readout.holding { transform: scale(0.96); }
+@media (prefers-reduced-motion: reduce) { .readout { transition: none; } }
+.optNote { margin: 0 4px; font-size: 0.95rem; line-height: 1.5; color: var(--muted); letter-spacing: 0.02em; }
+.resetBtn { width: 100%; padding: 12px; border-radius: 12px; font-size: 1.05rem; color: var(--hour); background: var(--bg); border-color: var(--track); margin-top: 4px; }
+.helpAgain { color: var(--fg); margin-top: 0; }
+#doneRing { display: none; }
+body.done #doneRing { display: inline; animation: donePulse 1.4s ease-in-out infinite; }
+@keyframes donePulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+@media (prefers-reduced-motion: reduce) { body.done #doneRing { animation: none; } }
+.resetBtn.confirm { background: var(--hour); color: var(--on-accent); border-color: var(--hour); }
+.sheetHead { display: flex; align-items: center; justify-content: space-between; }
+.sheetInner h2 { font-size: 1.2rem; margin: 0; }
+.sheetInner h3 { font-size: 0.95rem; margin: 6px 0 0; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.toggles { display: flex; flex-direction: column; gap: 8px; }
+button.toggle {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%;
+  border-radius: 12px; padding: 12px 14px; font-size: 1.125rem; text-align: left; background: var(--bg);
+}
+button.toggle[aria-pressed="true"] { border-color: var(--track); }
+.sw { width: 44px; height: 26px; border-radius: 13px; background: var(--track); position: relative; flex: none; transition: background .2s; }
+.sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--face); box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: transform .2s; }
+[aria-pressed="true"] > .sw { background: var(--minute); }
+.radio { width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--muted); box-sizing: border-box; flex: none; position: relative; }
+[aria-pressed="true"] > .radio { border-color: var(--minute); }
+[aria-pressed="true"] > .radio::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--minute); }
+[aria-pressed="true"] > .sw::after { transform: translateX(18px); }
+.sheetInner .hint { text-align: left; min-height: 0; margin: 0; }
+.help { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 10px; font-size: 1rem; line-height: 1.55; letter-spacing: 0.02em; color: var(--fg); }
+.sheetInner .legend { justify-content: flex-start; }
+</style>
+
+<div class="readout">
+  <div class="label" id="lbl"></div>
+  <div class="digital" id="big"></div>
+  <div class="sub" id="sub"></div>
+  <div class="oral" id="oral"></div>
+</div>
+
+<div class="halvesLegend" aria-hidden="true"><span class="moins">moins</span><span class="et">et</span></div>
+
+<div class="clock">
+  <svg viewBox="3 3 394 394" id="svg" role="img" aria-label="Horloge à disques">
+    <circle cx="200" cy="200" r="196" fill="var(--face)"></circle>
+    <!-- moitiés « et » / « moins » (option) -->
+    <g id="halves" pointer-events="none">
+      <path d="M200,4 A196,196 0 0,1 200,396 L200,338 A138,138 0 0,0 200,62Z" fill="var(--past)"></path>
+      <path d="M200,4 A196,196 0 0,0 200,396 L200,338 A138,138 0 0,1 200,62Z" fill="var(--to)"></path>
+    </g>
+    <!-- grand disque des minutes (2e plan) -->
+    <circle id="minTrack" class="trk" cx="200" cy="200" r="138" fill="var(--track)"></circle>
+    <path id="minWedge" fill="var(--minute)"></path>
+    <path id="minHollow" class="parts hollow"></path>
+    <clipPath id="minClip"><use href="#minWedge"></use></clipPath>
+    <g id="minParts" class="parts" clip-path="url(#minClip)"></g>
+    <g id="minLabels" class="parts" pointer-events="none"></g>
+    <g id="minTicks"></g>
+    <!-- petit disque des heures (1er plan) -->
+    <g id="hourGroup">
+      <circle cx="200" cy="200" r="86" fill="var(--face)"></circle>
+      <circle class="trk" cx="200" cy="200" r="80" fill="var(--track)"></circle>
+      <path id="hourWedge" fill="var(--hour)"></path>
+      <clipPath id="hourClip"><use href="#hourWedge"></use></clipPath>
+      <path id="hourHollow" class="parts hollow"></path>
+      <g id="hourParts" class="parts" clip-path="url(#hourClip)"></g>
+      <g id="hourLabels" class="parts" pointer-events="none"></g>
+    </g>
+    <circle id="targetDot" r="5" fill="var(--hour)" style="display:none"></circle>
+    <circle id="minTargetDot" r="5.5" fill="var(--minute)" stroke="var(--face)" stroke-width="2" style="display:none"></circle>
+    <g id="hourNums"></g>
+    <!-- points des secondes (périphérie) -->
+    <g id="dots"></g>
+    <!-- aiguilles -->
+    <g id="hands" pointer-events="none">
+      <g id="hourHand"><line x1="200" y1="214" x2="200" y2="126" stroke="var(--face)" stroke-width="15" stroke-linecap="round"></line><line x1="200" y1="214" x2="200" y2="126" stroke="var(--hour)" stroke-width="8" stroke-linecap="round"></line></g>
+      <g id="minHand"><line x1="200" y1="220" x2="200" y2="68" stroke="var(--face)" stroke-width="11" stroke-linecap="round"></line><line x1="200" y1="220" x2="200" y2="68" stroke="var(--minute)" stroke-width="5" stroke-linecap="round"></line></g>
+      <g id="minBadge">
+        <circle r="18" fill="var(--minute)" stroke="var(--face)" stroke-width="3"></circle>
+        <text id="minBadgeText" y="6" text-anchor="middle" class="badgeText"></text>
+      </g>
+      <g id="hourBadge">
+        <circle r="18" fill="var(--hour)" stroke="var(--face)" stroke-width="3"></circle>
+        <text id="hourBadgeText" y="6" text-anchor="middle" class="badgeText"></text>
+      </g>
+      <g id="secHand"><line x1="200" y1="226" x2="200" y2="52" stroke="var(--face)" stroke-width="6" stroke-linecap="round"></line><line x1="200" y1="226" x2="200" y2="52" stroke="var(--sec)" stroke-width="3" stroke-linecap="round"></line></g>
+      <circle class="cap" cx="200" cy="200" r="8" fill="var(--fg)" stroke="var(--face)" stroke-width="3"></circle>
+      <circle class="cap" cx="200" cy="200" r="2.5" fill="var(--sec)"></circle>
+    </g>
+    <!-- où se disent « et quart », « et demie », « moins le quart » (option et / moins) -->
+    <g id="oralMarks" pointer-events="none">
+      <defs>
+        <marker id="ah-et" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10Z" fill="var(--past-ink)"></path></marker>
+        <marker id="ah-moins" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10Z" fill="var(--to-ink)"></path></marker>
+      </defs>
+      <g class="oralMark et" data-min="15"><rect x="279" y="178" width="54" height="44" rx="9"></rect><text x="306" y="196" text-anchor="middle">et</text><text x="306" y="214" text-anchor="middle">quart</text><line class="arrow" x1="336" y1="200" x2="352" y2="200" marker-end="url(#ah-et)"></line></g>
+      <g class="oralMark et" data-min="30"><rect x="162" y="293" width="76" height="26" rx="9"></rect><text x="200" y="311" text-anchor="middle">et demie</text><line class="arrow" x1="200" y1="322" x2="200" y2="342" marker-end="url(#ah-et)"></line></g>
+      <g class="oralMark small et" data-min="5"><circle cx="257.0" cy="101.3" r="14"></circle><text x="257.0" y="106.3" text-anchor="middle">5</text></g>
+      <g class="oralMark small et" data-min="10"><circle cx="298.7" cy="143.0" r="14"></circle><text x="298.7" y="148.0" text-anchor="middle">10</text></g>
+      <g class="oralMark small et" data-min="20"><circle cx="298.7" cy="257.0" r="14"></circle><text x="298.7" y="262.0" text-anchor="middle">20</text></g>
+      <g class="oralMark small et" data-min="25"><circle cx="257.0" cy="298.7" r="14"></circle><text x="257.0" y="303.7" text-anchor="middle">25</text></g>
+      <g class="oralMark small moins" data-min="35"><circle cx="143.0" cy="298.7" r="14"></circle><text x="143.0" y="303.7" text-anchor="middle">25</text></g>
+      <g class="oralMark small moins" data-min="40"><circle cx="101.3" cy="257.0" r="14"></circle><text x="101.3" y="262.0" text-anchor="middle">20</text></g>
+      <g class="oralMark small moins" data-min="50"><circle cx="101.3" cy="143.0" r="14"></circle><text x="101.3" y="148.0" text-anchor="middle">10</text></g>
+      <g class="oralMark small moins" data-min="55"><circle cx="143.0" cy="101.3" r="14"></circle><text x="143.0" y="106.3" text-anchor="middle">5</text></g>
+      <g class="oralMark moins" data-min="45"><rect x="59" y="178" width="72" height="44" rx="9"></rect><text x="95" y="196" text-anchor="middle">moins</text><text x="95" y="214" text-anchor="middle">le quart</text><line class="arrow" x1="56" y1="200" x2="42" y2="200" marker-end="url(#ah-moins)"></line></g>
+    </g>
+    <!-- loupes : heures et minutes écrites sur le bord des disques (heure actuelle, ou temps restant) -->
+    <g id="partialHour" class="partialLabel" pointer-events="none"><rect id="partialHourBg" x="-17" y="-12" width="34" height="24" rx="12"></rect><text id="partialHourText" y="6" text-anchor="middle"></text></g>
+    <g id="partialMin" class="partialLabel" pointer-events="none"><rect id="partialMinBg" x="-17" y="-12" width="34" height="24" rx="12"></rect><text id="partialMinText" y="6" text-anchor="middle"></text></g>
+    <!-- anneau de progression pendant l'appui long -->
+    <!-- fin du temps : halo qui pulse doucement -->
+    <circle id="doneRing" cx="200" cy="200" r="190" fill="none" stroke="var(--sec)" stroke-width="10" pointer-events="none"></circle>
+    <circle id="holdRing" cx="200" cy="200" r="194" fill="none" stroke-width="5" stroke-linecap="round"
+      transform="rotate(-90 200 200)" stroke-dasharray="1219" stroke-dashoffset="1219"></circle>
+  </svg>
+</div>
+
+
+<div id="days" class="days" aria-label="Jours"></div>
+
+<div class="controls">
+  <button id="backBtn" type="button" class="primary invisible">Revenir à l'heure</button>
+</div>
+
+<button id="settingsBtn" type="button" class="gear" aria-label="Paramètres" aria-expanded="false">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6a.5.5 0 0 0 .1-.6l-2-3.5a.5.5 0 0 0-.6-.2l-2.5 1a7.4 7.4 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.4l-.4 2.7a7.4 7.4 0 0 0-1.7 1l-2.5-1a.5.5 0 0 0-.6.2l-2 3.5a.5.5 0 0 0 .1.6L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6a.5.5 0 0 0-.1.6l2 3.5c.1.2.4.3.6.2l2.5-1c.5.4 1.1.7 1.7 1l.4 2.6c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.4l.4-2.7c.6-.3 1.2-.6 1.7-1l2.5 1c.2.1.5 0 .6-.2l2-3.5a.5.5 0 0 0-.1-.6L19.4 13ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
+</button>
+
+<div id="helpSheet" class="sheet" hidden>
+  <div class="sheetInner" role="dialog" aria-label="Comment utiliser l'horloge">
+    <h2>Comment utiliser l'horloge</h2>
+    <ul class="help">
+      <li><b>Appui long sur un chiffre</b> du cadran : combien de temps avant cette heure.</li>
+      <li><b>Appui long sur le disque bleu</b> : combien de temps avant l'heure pile.</li>
+      <li><b>Appui long sur l'heure en haut</b> : choisir l'heure d'un rendez-vous.</li>
+      <li><b>Appui court</b> sur l'horloge : revenir à l'heure.</li>
+      <li><b>Roue dentée</b> en haut à droite : ajouter des éléments (aiguilles, date…) ou retirer les aides.</li>
+    </ul>
+    <p class="optNote">Appui long = garder le doigt posé une demi-seconde, jusqu'à ce qu'un cercle fasse le tour de l'horloge.</p>
+    <button id="helpOk" type="button" class="primary rdvOk">J'ai compris</button>
+  </div>
+</div>
+
+<div id="rdvSheet" class="sheet" hidden>
+  <div class="sheetInner" role="dialog" aria-label="Rendez-vous">
+    <div class="sheetHead"><h2>Rendez-vous à…</h2><button id="rdvCancel" type="button">Annuler</button></div>
+    <input id="rdvTime" type="time" lang="fr" class="rdvInput" aria-label="Heure du rendez-vous">
+    <button id="rdvOk" type="button" class="primary rdvOk">Afficher le temps restant</button>
+  </div>
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheetInner" role="dialog" aria-label="Paramètres">
+    <div class="sheetHead"><h2>Paramètres</h2><button id="closeBtn" type="button">Fermer</button></div>
+    <h3>Sur le cadran</h3>
+    <div class="toggles">
+      <button type="button" class="toggle" data-opt="classic" aria-pressed="false"><span class="lbl">Montre classique (sans les disques de couleur)</span><span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="toggle" data-opt="hands" aria-pressed="false"><span class="lbl">Aiguilles</span><span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="toggle" data-opt="sec" aria-pressed="false"><span class="lbl">Secondes</span><span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="toggle" data-opt="halves" aria-pressed="false"><span class="lbl">Moitiés « et / moins »</span><span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="toggle" data-opt="noloupes" aria-pressed="false"><span class="lbl">Sans loupes (pour lire l'heure sans aide)</span><span class="sw" aria-hidden="true"></span></button>
+    </div>
+    <h3>Autour du cadran</h3>
+    <div class="toggles">
+      <button type="button" class="toggle" data-opt="date" aria-pressed="false"><span class="lbl">Date</span><span class="sw" aria-hidden="true"></span></button>
+      <button type="button" class="toggle" data-opt="days" aria-pressed="false"><span class="lbl">Hier · aujourd'hui · demain</span><span class="sw" aria-hidden="true"></span></button>
+    </div>
+    <h3>Écran</h3>
+    <div id="themeChoice" class="toggles" role="radiogroup" aria-label="Couleurs">
+      <button type="button" class="toggle choice" role="radio" data-theme-v="auto" aria-checked="true" aria-pressed="true"><span class="lbl">Couleurs comme l'iPhone</span><span class="radio" aria-hidden="true"></span></button>
+      <button type="button" class="toggle choice" role="radio" data-theme-v="light" aria-checked="false" aria-pressed="false"><span class="lbl">Toujours clair</span><span class="radio" aria-hidden="true"></span></button>
+      <button type="button" class="toggle choice" role="radio" data-theme-v="dark" aria-checked="false" aria-pressed="false"><span class="lbl">Toujours sombre</span><span class="radio" aria-hidden="true"></span></button>
+      <button type="button" class="toggle choice" role="radio" data-theme-v="evening" aria-checked="false" aria-pressed="false"><span class="lbl">Sombre le soir (20 h – 7 h)</span><span class="radio" aria-hidden="true"></span></button>
+    </div>
+    <div class="toggles">
+      <button id="wakeBtn" type="button" class="toggle" aria-pressed="false"><span class="lbl">Garder l'écran allumé</span><span class="sw" aria-hidden="true"></span></button>
+      <p class="optNote">Empêche l'iPhone de se mettre en veille tant que l'horloge est ouverte, pour suivre un temps restant sans toucher l'écran. Consomme de la batterie : à utiliser de préférence branché. Se désactive à chaque fermeture de l'horloge.</p>
+    </div>
+    <button id="resetBtn" type="button" class="resetBtn">Réinitialiser les paramètres</button>
+    <h3>Mode d'emploi</h3>
+    <button id="helpAgain" type="button" class="resetBtn helpAgain">Revoir l'aide de démarrage</button>
+    <ul class="help">
+      <li><b>Rendez-vous</b> : appuyez longuement sur l'heure écrite en chiffres, en haut de l'écran. Un panneau « Rendez-vous à… » s'ouvre : touchez l'heure proposée pour la régler, puis « Afficher le temps restant ». L'horloge montre alors combien de temps il reste jusqu'au rendez-vous (exemple : il est 12 h 09, rendez-vous à 12 h 30 → il reste 21 min).</li>
+      <li><b>Avant l'heure pile</b> : appuyez longuement sur le disque bleu (en montre classique : sur l'anneau bleu clair). L'horloge montre le temps qui reste jusqu'à la prochaine heure pile (exemple : il est 16 h 55 → il reste 5 min avant 17 h).</li>
+      <li><b>Avant une heure choisie</b> : appuyez longuement sur un chiffre du cadran. L'horloge montre le temps qui reste jusqu'à la prochaine fois que la petite aiguille arrivera sur ce chiffre (exemple : il est 15 h 24, appui sur le 5 → il reste 1 h 36 min avant 17 h).</li>
+      <li><b>Lire le temps restant</b> : chaque part bleue vaut 5 minutes, chaque part rouge vaut 1 heure. Le chiffre écrit dans une part indique ce qu'il restera quand l'aiguille y entrera (exemple : 20, 15, 10, 5 → il reste 20 minutes, puis 15…). La part déjà entamée par l'aiguille est plus claire.</li>
+      <li><b>Revenir à l'heure</b> : touchez brièvement l'horloge, ou le bouton « Revenir à l'heure ».</li>
+    </ul>
+    <div class="legend">
+      <span><i style="background:var(--hour)"></i>Heures</span>
+      <span><i style="background:var(--minute)"></i>Minutes</span>
+      <span><i style="background:var(--sec)"></i>Secondes</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const C = 200, NS = "http://www.w3.org/2000/svg";
+const R_MIN = 138, R_HOUR = 80, R_NUM = 176;
+const $ = id => document.getElementById(id);
+const pad = n => String(n).padStart(2, "0");
+
+function pt(r, frac) {
+  const a = frac * 2 * Math.PI - Math.PI / 2;
+  return [C + r * Math.cos(a), C + r * Math.sin(a)];
+}
+// Secteur qui part de f0 et couvre "span" (fractions de tour), dans le sens des aiguilles
+function sector(r, f0, span) {
+  if (span <= 0.0005) return "";
+  if (span >= 0.9995) return `M${C - r},${C}a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0Z`;
+  const [x0, y0] = pt(r, f0), [x1, y1] = pt(r, f0 + span);
+  return `M${C},${C}L${x0},${y0}A${r},${r} 0 ${span > 0.5 ? 1 : 0},1 ${x1},${y1}Z`;
+}
+function setAttrs(el, o) { for (const k in o) el.setAttribute(k, o[k]); return el; }
+
+// Repères des minutes (toutes les 5 min)
+const mt = $("minTicks");
+for (let i = 0; i < 12; i++) {
+  // petits repères au bord (toujours visibles)
+  let [x1, y1] = pt(128, i / 12), [x2, y2] = pt(R_MIN, i / 12);
+  mt.appendChild(setAttrs(document.createElementNS(NS, "line"),
+    { x1, y1, x2, y2, stroke: "var(--face)", "stroke-width": i % 3 ? 2 : 4, "stroke-linecap": "round" }));
+  // parts de 5 minutes, visibles seulement sur le temps restant
+  [x1, y1] = pt(86, i / 12); [x2, y2] = pt(R_MIN, i / 12);
+  $("minParts").appendChild(setAttrs(document.createElementNS(NS, "line"),
+    { x1, y1, x2, y2, stroke: "var(--face)", "stroke-width": i % 3 ? 2 : 3.5 }));
+}
+// minutes restantes dans chaque part : 60, 55 … 10, 5
+// Étiquette sur deux lignes : « reste » puis la valeur (évite de confondre avec la position des minutes)
+function setReste(t, val) {
+  const x = t.getAttribute("x"), y = Number(t.dataset.y);
+  t.innerHTML = `<tspan class="resteW" x="${x}" y="${y - 5}">reste</tspan><tspan x="${x}" y="${y + 13}">${val}</tspan>`;
+}
+const minLabels = [];
+for (let k = 0; k < 12; k++) {
+  const [x, y] = pt(113, (k + 0.5) / 12);
+  const t = setAttrs(document.createElementNS(NS, "text"),
+    { x, y: y + 6, "text-anchor": "middle", class: "partLabel" });
+  t.dataset.y = y;
+  $("minLabels").appendChild(t); minLabels.push(t);
+}
+// minPos : minutes actuelles (avec secondes), remMin : minutes restantes dans le disque bleu, tm : minute visée
+function updateMinLabels(minPos, remMin, tm) {
+  minLabels.forEach((t, k) => {
+    const dStart = ((k * 5 - minPos) % 60 + 60) % 60;
+    const full = dStart + 5 <= remMin + 1e-3 && (dStart > 1e-3 || minPos % 5 < 1e-3);
+    t.style.display = full ? "" : "none";
+    setReste(t, ((tm - k * 5) % 60 + 60) % 60 || 60);
+  });
+}
+
+// heures restantes dans chaque part (… 3, 2, 1)
+const hourLabels = [];
+for (let j = 0; j < 12; j++) {
+  const [x, y] = pt(50, (j + 0.5) / 12);
+  hourLabels.push($("hourLabels").appendChild(setAttrs(document.createElementNS(NS, "text"),
+    { x, y: y + 5, "text-anchor": "middle", class: "partLabel hourPart" })));
+}
+function updateHourLabels(hourPos, remH, h12target) {
+  hourLabels.forEach((t, j) => {
+    const dStart = ((j - hourPos) % 12 + 12) % 12;      // heures entre maintenant et le début de la part
+    const full = dStart + 1 <= remH + 1e-3 && (dStart > 1e-3 || hourPos % 1 < 1e-3);
+    t.style.display = full ? "" : "none";
+    t.innerHTML = `${((h12target - j) % 12 + 12) % 12 || 12}<tspan class="hUnit">h</tspan>`;
+  });
+}
+
+// parts d'une heure, visibles seulement sur le temps restant
+const ht = $("hourParts");
+for (let i = 0; i < 12; i++) {
+  const [x1, y1] = pt(12, i / 12), [x2, y2] = pt(R_HOUR, i / 12);
+  ht.appendChild(setAttrs(document.createElementNS(NS, "line"),
+    { x1, y1, x2, y2, stroke: "var(--face)", "stroke-width": i % 3 ? 2 : 3 }));
+}
+
+// Chiffres des heures
+const hn = $("hourNums"), nums = [];   // nums[0–11]
+for (let h = 1; h <= 12; h++) {
+  const [x, y] = pt(R_NUM, h / 12);
+  const t = setAttrs(document.createElementNS(NS, "text"),
+    { x, y: y + 9, "text-anchor": "middle", class: "num", "font-size": h % 3 ? 25 : 29 });
+  t.textContent = h;
+  hn.appendChild(t); nums[h % 12] = t;
+}
+
+// 60 points des secondes
+const dg = $("dots"), dots = [];
+for (let i = 0; i < 60; i++) {
+  const [x, y] = pt(150, (i + 1) / 60);
+  dots.push(dg.appendChild(setAttrs(document.createElementNS(NS, "circle"),
+    { cx: x, cy: y, r: (i + 1) % 5 ? 3.4 : 5 })));
+}
+
+/* ---------- Modes ----------
+   mode = null           : heure normale
+   mode = {type:"min", target}   : temps restant avant l'heure pile
+   mode = {type:"hour", target, h12} : temps restant avant l'heure choisie */
+let mode = null;
+
+function nextFullHour(now) {
+  const t = new Date(now); t.setMinutes(0, 0, 0); t.setHours(t.getHours() + 1); return t;
+}
+function nextOccurrence(now, h12) {
+  // prochaine fois où la petite aiguille sera sur h12 (dans moins de 12 h)
+  const t = new Date(now); t.setMinutes(0, 0, 0);
+  for (let i = 0; i < 13; i++) {
+    if (t > now && t.getHours() % 12 === h12) return t;
+    t.setHours(t.getHours() + 1);
+  }
+  return t;
+}
+// Transition douce entre l'heure et le temps restant
+const want = { minWedge: [0, 0], hourWedge: [0, 0] };
+const shown = { minWedge: [0, 0], hourWedge: [0, 0] };
+let anim = null;
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function drawWedges() {
+  let k = 1;
+  if (anim) {
+    const t = (performance.now() - anim.t0) / 450;
+    if (t >= 1) anim = null; else k = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+  for (const id of ["minWedge", "hourWedge"]) {
+    const [a, b] = want[id];
+    const v = anim ? [anim.from[id][0] + (a - anim.from[id][0]) * k, anim.from[id][1] + (b - anim.from[id][1]) * k] : [a, b];
+    shown[id] = v;
+    $(id).setAttribute("d", sector(id === "minWedge" ? R_MIN : R_HOUR, v[0], v[1]));
+  }
+}
+function startAnim() {
+  if (reduceMotion) return;
+  anim = { t0: performance.now(), from: { minWedge: [...shown.minWedge], hourWedge: [...shown.hourWedge] } };
+}
+
+function enterMode(m) {
+  document.body.classList.toggle("inMode", !!m);
+  if (!m) document.body.classList.remove("done");
+  startAnim();
+  mode = m;
+  nums.forEach((t, i) => t.classList.toggle("target", !!(m && m.type === "hour" && i === m.h12)));
+  $("minParts").classList.toggle("on", !!m);
+  $("hourParts").classList.toggle("on", !!(m && m.type === "hour"));
+  $("minLabels").classList.toggle("on", !!m);
+  $("minHollow").classList.toggle("on", !!m);
+  $("hourHollow").classList.toggle("on", !!(m && m.type === "hour"));
+  $("hourLabels").classList.toggle("on", !!(m && m.type === "hour"));
+  $("backBtn").classList.toggle("invisible", !m);
+  lastSec = -1;
+}
+
+// L'heure dite à l'oral : « et » sur la moitié droite, « moins » sur la moitié gauche
+const NB = ["", "une", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt", "vingt et une", "vingt-deux", "vingt-trois", "vingt-quatre", "vingt-cinq", "vingt-six", "vingt-sept", "vingt-huit", "vingt-neuf"];
+function heureDite(h24) {
+  if (h24 % 24 === 0) return "minuit";
+  if (h24 % 24 === 12) return "midi";
+  const h = h24 % 12;
+  return h === 1 ? "une heure" : NB[h] + " heures";
+}
+// moment de la journée, pour relier « trois heures » à 15 h
+function moment(h24) {
+  const h = h24 % 24;
+  if (h === 0 || h === 12) return "";
+  if (h < 12) return " du matin";
+  if (h < 18) return " de l'après-midi";
+  return " du soir";
+}
+function oral(h, m) {
+  const ref = m > 30 ? h + 1 : h;
+  const txt = oralBase(h, m) + `<span class="moment">${moment(ref)}</span>`;
+  // ne jamais couper un mot composé (vingt-quatre, après-midi) en fin de ligne
+  return txt.replace(/([^\s<>"]+-[^\s<>"]+)/g, '<span class="nw">$1</span>');
+}
+function oralBase(h, m) {
+  if (m === 0) return heureDite(h);
+  if (m <= 30) {
+    const fin = m === 15 ? "quart" : m === 30 ? (h % 12 === 0 ? "demi" : "demie") : null;
+    return fin ? `${heureDite(h)} <span class="et">et</span> ${fin}` : `${heureDite(h)} ${NB[m].replace("une", "un")}`;
+  }
+  const r = 60 - m;
+  return `${heureDite(h + 1)} <span class="moins">moins</span> ${r === 15 ? "le quart" : NB[r].replace("une", "un")}`;
+}
+
+// Même présentation pour l'heure et le temps restant : heures, minutes, secondes
+function hms(h, m, s) {
+  return `<span class="h">${h}<small>h</small></span><span class="m">${pad(m)}<small>min</small></span><span class="s">${pad(s)}<small>s</small></span>`;
+}
+function splitMs(ms) {
+  // secondes masquées : on arrondit à la minute supérieure (12 h 09 → 12 h 30 = 21 min)
+  if (!document.body.classList.contains("opt-sec")) ms = Math.ceil(ms / 60000) * 60000;
+  const t = Math.max(0, Math.ceil(ms / 1000));
+  return [Math.floor(t / 3600), Math.floor((t % 3600) / 60), t % 60];
+}
+
+let lastSec = -1;
+function tick() {
+  const d = new Date();
+  const h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds();
+  const minFrac = (m + (s + ms / 1000) / 60) / 60;
+  const hourFrac = ((h % 12) + m / 60 + s / 3600) / 12;
+  $("hourHand").setAttribute("transform", `rotate(${hourFrac * 360} 200 200)`);
+  $("minHand").setAttribute("transform", `rotate(${minFrac * 360} 200 200)`);
+  $("secHand").setAttribute("transform", `rotate(${s * 6} 200 200)`);
+  const [bx, by] = pt(108, minFrac);
+  $("minBadge").setAttribute("transform", `translate(${bx} ${by})`);
+  // Pastilles : heure actuelle, ou temps restant en mode « reste »
+  let badgeH = h, badgeM = m;
+  if (mode) {
+    [badgeH, badgeM] = splitMs(mode.target - d);
+  }
+  $("minBadgeText").textContent = badgeM;
+  let onMark = false;
+  document.querySelectorAll(".oralMark").forEach(g => {
+    const hit = !mode && Number(g.dataset.min) === m;
+    g.classList.toggle("now", hit); onMark = onMark || hit;
+  });
+  $("minBadge").classList.toggle("onMark", onMark);
+  $("partialMin").classList.toggle("onMark", onMark);
+  const [hx, hy] = pt(50, hourFrac);
+  $("hourBadge").setAttribute("transform", `translate(${hx} ${hy})`);
+  $("hourBadgeText").textContent = badgeH;
+  nightTheme(h);
+  renderDays(d); if (s !== lastSec) updateDayBar(d);
+
+  if (!mode) {
+    want.minWedge = [0, minFrac];
+    want.hourWedge = [0, hourFrac];
+    // sans loupes : les minutes écrites sur le bord, au bout de la part bleue
+    const [qx, qy] = pt(140, minFrac);
+    $("partialMin").setAttribute("transform", `translate(${qx} ${qy})`);
+    $("partialMin").classList.add("show");
+    $("partialMinText").textContent = m;
+    setAttrs($("partialMinBg"), { x: -17, y: -12, width: 34, height: 24, rx: 12 });
+    // loupe rouge : l'heure (en 24 h) sur le bord du disque rouge
+    const [rx, ry] = pt(R_HOUR, hourFrac);
+    $("partialHour").setAttribute("transform", `translate(${rx} ${ry})`);
+    $("partialHour").classList.add("show");
+    $("partialHourText").textContent = h;
+    setAttrs($("partialHourBg"), { x: -17, y: -12, width: 34, height: 24, rx: 12 });
+    $("hourGroup").classList.remove("dim");
+    $("targetDot").style.display = "none";
+    $("minTargetDot").style.display = "none";
+  } else {
+    const rem = mode.target - d;                 // millisecondes restantes
+    const remInHour = rem <= 0 ? 0 : (rem % 3600000 === 0 ? 3600000 : rem % 3600000);
+    // Minutes : la part qui reste, de l'aiguille jusqu'au bout
+    want.minWedge = [minFrac, remInHour / 3600000];
+    // part en cours : évidée (de l'aiguille jusqu'au prochain trait)
+    const posM = minFrac * 12;
+    $("minHollow").setAttribute("d", sector(R_MIN, minFrac, Math.min((Math.ceil(posM - 1e-9) - posM) / 12, remInHour / 3600000)));
+    if (mode.type === "min") {
+      want.hourWedge = [0, hourFrac];
+      $("hourGroup").classList.add("dim");
+      $("targetDot").style.display = "none";
+    } else {
+      // Heures : de maintenant jusqu'à l'heure choisie
+      want.hourWedge = [hourFrac, Math.min(1, Math.max(0, rem) / 43200000)];
+      const posH = hourFrac * 12;
+      $("hourHollow").setAttribute("d", sector(R_HOUR, hourFrac, Math.min((Math.ceil(posH - 1e-9) - posH) / 12, Math.max(0, rem) / 43200000)));
+      $("hourGroup").classList.remove("dim");
+      const tH = mode.target.getHours() % 12, tM = mode.target.getMinutes();
+      const [tx, ty] = pt(91, (tH + tM / 60) / 12);
+      setAttrs($("targetDot"), { cx: tx, cy: ty }); $("targetDot").style.display = "";
+      // repère bleu sur la minute visée
+      const [mx, my] = pt(R_MIN + 5, tM / 60);
+      setAttrs($("minTargetDot"), { cx: mx, cy: my }); $("minTargetDot").style.display = "";
+    }
+  }
+
+  drawWedges();
+
+  if (s !== lastSec) {
+    lastSec = s;
+    if (!mode) {
+      dots.forEach((c, i) => c.setAttribute("fill", i < s ? "var(--sec)" : "var(--dot-off)"));
+      $("lbl").textContent = "Il est";
+      $("oral").innerHTML = `<span>${oral(h, m)}</span>`;
+      $("big").innerHTML = hms(h, m, s);
+      $("sub").textContent = opts.date ? d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" }) : "";
+      $("svg").setAttribute("aria-label", `Il est ${h} h ${pad(m)}`);
+    } else {
+      const rem = mode.target - d;
+      const done = rem <= 0;
+      document.body.classList.toggle("done", done);
+      const remMs = Math.max(0, rem), remInH = remMs === 0 ? 0 : (remMs % 3600000 || 3600000);
+      const minPos = m + (s + d.getMilliseconds() / 1000) / 60;
+      updateMinLabels(minPos, remInH / 60000, mode.target.getMinutes());
+      // sans loupes : minutes restantes exactes écrites dans la part entamée
+      const pk = Math.floor(minPos / 5), pm = $("partialMin");
+      const hasPartial = remInH > 0 && minPos % 5 > 1e-3;
+      pm.classList.toggle("show", hasPartial);
+      if (hasPartial) {
+        const [px, py] = pt(140, (pk + 0.5) / 12);
+        pm.setAttribute("transform", `translate(${px} ${py})`);
+        const pv = splitMs(rem)[1] || (splitMs(rem)[0] ? 60 : 0);
+        $("partialMinText").innerHTML = `<tspan class="resteW" x="0" y="-4">reste</tspan><tspan x="0" y="14">${pv}</tspan>`;
+        setAttrs($("partialMinBg"), { x: -23, y: -20, width: 46, height: 40, rx: 13 });
+      }
+      // loupe rouge : heures restantes, en face de la part d'heure entamée
+      const hourPos = (h % 12) + m / 60 + (s + d.getMilliseconds() / 1000) / 3600;
+      const remH = Math.max(0, rem) / 3600000, ph = $("partialHour");
+      const hasHourPartial = !done && hourPos % 1 > 1e-3;
+      ph.classList.toggle("show", hasHourPartial);
+      if (hasHourPartial) {
+        const span = Math.min(Math.ceil(hourPos - 1e-9) - hourPos, remH);
+        const [hx2, hy2] = pt(R_HOUR + 3, (hourPos + span / 2) / 12);
+        ph.setAttribute("transform", `translate(${hx2} ${hy2})`);
+        $("partialHourText").innerHTML = `<tspan class="resteW" x="0" y="-4">reste</tspan><tspan x="0" y="14">${splitMs(rem)[0]}h</tspan>`;
+        setAttrs($("partialHourBg"), { x: -23, y: -20, width: 46, height: 40, rx: 13 });
+      }
+      if (mode.type === "hour") updateHourLabels((h % 12) + m / 60 + (s + d.getMilliseconds() / 1000) / 3600, done ? 0 : rem / 3600000, mode.h12);
+      // Secondes : il reste les points de s à 59
+      dots.forEach((c, i) => c.setAttribute("fill", !done && i >= s ? "var(--sec)" : "var(--dot-off)"));
+      const th = mode.target.getHours();
+      const label = `${th} h${mode.target.getMinutes() ? " " + pad(mode.target.getMinutes()) : ""}`;
+      if (done) {
+        $("lbl").textContent = "C'est l'heure !";
+        $("oral").innerHTML = "";
+        $("big").innerHTML = hms(0, 0, 0);
+        $("sub").innerHTML = `il est ${h} h ${pad(m)}`;
+      } else {
+        $("lbl").textContent = "Il reste";
+        $("oral").innerHTML = "";
+        $("big").innerHTML = hms(...splitMs(rem));
+        $("sub").innerHTML = `avant <b>${label}</b> · il est ${h} h ${pad(m)}`;
+      }
+      $("svg").setAttribute("aria-label", done ? "C'est l'heure" : `Temps restant avant ${label}`);
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---------- Appui long ---------- */
+const svg = $("svg"), ring = $("holdRing");
+let press = null;
+
+function toSvg(e) {
+  const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+  return p.matrixTransform(svg.getScreenCTM().inverse());
+}
+function hitTest(p) {
+  const showNums = true;
+  for (let h = 1; h <= 12; h++) {
+    const [x, y] = pt(R_NUM, h / 12);
+    if (Math.hypot(p.x - x, p.y - y) < (showNums ? 20 : 15)) return { type: "hour", h12: h % 12 };
+  }
+  const d = Math.hypot(p.x - C, p.y - C);
+  if (d > 86 && d <= 154) {
+    // minute visée : position du doigt, arrondie à 5 minutes
+    let a = Math.atan2(p.x - C, -(p.y - C)) / (2 * Math.PI); if (a < 0) a += 1;
+    return { type: "min", mm: Math.round(a * 12) % 12 * 5 };
+  }
+  return null;
+}
+function resetRing() { ring.classList.remove("go"); ring.setAttribute("stroke-dashoffset", "1219"); }
+
+svg.addEventListener("pointerdown", e => {
+  const p = toSvg(e), hit = hitTest(p);
+  press = { x: p.x, y: p.y, fired: false, hit, timer: null };
+  if (!hit) return;
+  ring.setAttribute("stroke", hit.type === "hour" ? "var(--hour)" : "var(--minute)");
+  resetRing(); void ring.getBoundingClientRect();
+  ring.classList.add("go"); ring.setAttribute("stroke-dashoffset", "0");
+  press.timer = setTimeout(() => {
+    press.fired = true; resetRing();
+    const now = new Date();
+    // Disque bleu = même chose qu'un appui sur le chiffre de l'heure suivante
+    if (hit.type === "min") {
+      // Disque bleu : temps restant jusqu'à l'heure pile
+      const t = nextFullHour(now);
+      enterMode({ type: "hour", h12: t.getHours() % 12, target: t });
+    } else {
+      enterMode({ type: "hour", h12: hit.h12, target: nextOccurrence(now, hit.h12) });
+    }
+  }, 550);
+});
+svg.addEventListener("pointermove", e => {
+  if (!press || press.fired || !press.timer) return;
+  const p = toSvg(e);
+  if (Math.hypot(p.x - press.x, p.y - press.y) > 12) { clearTimeout(press.timer); press.timer = null; resetRing(); }
+});
+function endPress() {
+  if (!press) return;
+  if (press.timer) clearTimeout(press.timer);
+  if (!press.fired) { resetRing(); if (mode) enterMode(null); }  // appui court : retour à l'heure
+  press = null;
+}
+svg.addEventListener("pointerup", endPress);
+svg.addEventListener("pointercancel", () => { if (press && press.timer) clearTimeout(press.timer); resetRing(); press = null; });
+svg.addEventListener("contextmenu", e => e.preventDefault());
+
+$("backBtn").addEventListener("click", () => enterMode(null));
+
+
+// Rendez-vous : appui long sur l'heure en chiffres
+const rdv = $("rdvSheet"), readout = document.querySelector(".readout");
+let rdvPress = null;
+function openRdv(open) {
+  rdv.hidden = !open;
+  if (open) {
+    const t = new Date(Date.now() + 5 * 60000);           // proposition : dans 5 min, arrondi
+    t.setMinutes(Math.ceil(t.getMinutes() / 5) * 5, 0, 0);
+    $("rdvTime").value = `${pad(t.getHours())}:${pad(t.getMinutes())}`;
+  }
+}
+readout.addEventListener("pointerdown", e => {
+  readout.classList.add("holding");
+  rdvPress = { x: e.clientX, y: e.clientY, timer: setTimeout(() => { readout.classList.remove("holding"); rdvPress = null; openRdv(true); }, 550) };
+});
+function endRdvPress() { if (rdvPress) { clearTimeout(rdvPress.timer); rdvPress = null; } readout.classList.remove("holding"); }
+readout.addEventListener("pointerup", endRdvPress);
+readout.addEventListener("pointercancel", endRdvPress);
+readout.addEventListener("pointermove", e => { if (rdvPress && Math.hypot(e.clientX - rdvPress.x, e.clientY - rdvPress.y) > 12) endRdvPress(); });
+readout.addEventListener("contextmenu", e => e.preventDefault());
+$("rdvCancel").addEventListener("click", () => openRdv(false));
+rdv.addEventListener("click", e => { if (e.target === rdv) openRdv(false); });
+$("rdvOk").addEventListener("click", () => {
+  const v = $("rdvTime").value;
+  if (!/^\d{1,2}:\d{2}/.test(v)) return;
+  const [H, M] = v.split(":").map(Number), now = new Date(), t = new Date(now);
+  t.setHours(H, M, 0, 0);
+  if (t <= now) t.setDate(t.getDate() + 1);
+  openRdv(false);
+  enterMode({ type: "hour", h12: M === 0 ? H % 12 : null, target: t });
+});
+
+// Aide au premier lancement
+const help = $("helpSheet");
+function openHelp(open) {
+  help.hidden = !open;
+  if (!open) { try { localStorage.setItem("aideVue", "1"); } catch (_) {} }
+}
+$("helpOk").addEventListener("click", () => openHelp(false));
+help.addEventListener("click", e => { if (e.target === help) openHelp(false); });
+$("helpAgain").addEventListener("click", () => { openSheet(false); openHelp(true); });
+let aideVue = false;
+try { aideVue = localStorage.getItem("aideVue") === "1"; } catch (_) { aideVue = true; }
+if (!aideVue) openHelp(true);
+
+// Panneau des paramètres
+const sheet = $("sheet"), gear = $("settingsBtn");
+function openSheet(open) {
+  sheet.hidden = !open;
+  gear.setAttribute("aria-expanded", open);
+  if (open) $("closeBtn").focus(); else gear.focus();
+}
+gear.addEventListener("click", () => openSheet(sheet.hidden));
+$("closeBtn").addEventListener("click", () => openSheet(false));
+sheet.addEventListener("click", e => { if (e.target === sheet) openSheet(false); });
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (!sheet.hidden) openSheet(false);
+  if (!rdv.hidden) openRdv(false);
+});
+
+// Frise des jours sous le cadran
+const DAYS_LONG = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+const DAYS = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+let daysMode = "none", daysKey = "";
+function renderDays(now, force) {
+  const key = now.toDateString() + daysMode;
+  if (!force && key === daysKey) return;
+  daysKey = key;
+  const box = $("days");
+  box.hidden = daysMode === "none";
+  box.className = "days " + daysMode;
+  const today = now.getDay();
+  const cell = (label, cls, sub) => `<div class="day ${cls}"><span class="dn">${label}</span>${sub ? `<span class="ds">${sub}</span>` : ""}${cls.includes("today") ? '<span class="bar"><i id="dayBar"></i></span>' : ""}</div>`;
+  if (daysMode === "three") {
+    const y = (today + 6) % 7, t = (today + 1) % 7;
+    box.innerHTML = cell("Hier", "past", DAYS_LONG[y].toLowerCase()) +
+      cell(DAYS_LONG[today], "today") +
+      cell("Demain", "next", DAYS_LONG[t].toLowerCase());
+  } else box.innerHTML = "";
+}
+function updateDayBar(d) {
+  const bar = document.getElementById("dayBar");
+  if (bar) bar.style.width = ((d.getHours() * 60 + d.getMinutes()) / 1440 * 100).toFixed(1) + "%";
+}
+
+
+
+// Thème sombre automatique de 20 h à 7 h
+const root = document.documentElement;
+// Couleurs : comme l'iPhone, toujours clair, toujours sombre, ou sombre de 20 h à 7 h
+const hostTheme = root.getAttribute("data-theme");
+let theme = "auto", applied = undefined;
+try { theme = localStorage.getItem("horlogeTheme") || "auto"; } catch (_) {}
+function nightTheme(h) {
+  const want = theme === "light" ? "light" : theme === "dark" ? "dark"
+    : theme === "evening" ? (h >= 20 || h < 7 ? "dark" : "light") : hostTheme;
+  if (want === applied) return;
+  applied = want;
+  want ? root.setAttribute("data-theme", want) : root.removeAttribute("data-theme");
+}
+function setTheme(v, save) {
+  theme = v;
+  document.querySelectorAll("#themeChoice button").forEach(b => { const on = b.dataset.themeV === v; b.setAttribute("aria-pressed", on); b.setAttribute("aria-checked", on); });
+  nightTheme(new Date().getHours());
+  if (save) { try { localStorage.setItem("horlogeTheme", v); } catch (_) {} }
+}
+document.querySelectorAll("#themeChoice button").forEach(b => b.addEventListener("click", () => setTheme(b.dataset.themeV, true)));
+setTheme(theme, false);
+
+
+
+// Options mémorisées sur l'appareil ; toutes désactivées au premier lancement
+const OPTS = ["classic", "noloupes", "hands", "sec", "halves", "date", "days"];
+const opts = {};
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem("horlogeOptions") || "{}"); } catch (_) {}
+function applyOpt(key, on, save) {
+  opts[key] = on;
+  document.body.classList.toggle("opt-" + key, on);
+  const btn = document.querySelector(`[data-opt="${key}"]`);
+  if (btn) btn.setAttribute("aria-pressed", on);
+  if (key === "days") { daysMode = on ? "three" : "none"; renderDays(new Date(), true); }
+  lastSec = -1;
+  if (save) { try { localStorage.setItem("horlogeOptions", JSON.stringify(opts)); } catch (_) {} }
+}
+OPTS.forEach(k => applyOpt(k, saved[k] === true, false));
+document.querySelectorAll("[data-opt]").forEach(b =>
+  b.addEventListener("click", () => applyOpt(b.dataset.opt, !opts[b.dataset.opt], true)));
+
+// Réinitialiser : deux appuis pour éviter une erreur
+let resetTimer = null;
+$("resetBtn").addEventListener("click", async e => {
+  const btn = e.currentTarget;
+  if (!btn.classList.contains("confirm")) {
+    btn.classList.add("confirm"); btn.textContent = "Toucher encore pour confirmer";
+    resetTimer = setTimeout(() => { btn.classList.remove("confirm"); btn.textContent = "Réinitialiser les paramètres"; }, 4000);
+    return;
+  }
+  clearTimeout(resetTimer);
+  OPTS.forEach(k => applyOpt(k, false, true));
+  setTheme("auto", true);
+  try { localStorage.removeItem("aideVue"); } catch (_) {}
+  if (lock) { try { await lock.release(); } catch (_) {} lock = null; $("wakeBtn").setAttribute("aria-pressed", "false"); }
+  btn.classList.remove("confirm"); btn.textContent = "Paramètres réinitialisés";
+  setTimeout(() => { btn.textContent = "Réinitialiser les paramètres"; }, 2500);
+});
+
+// Garder l'écran allumé (si le navigateur l'autorise)
+let lock = null;
+$("wakeBtn").addEventListener("click", async e => {
+  const btn = e.currentTarget;
+  if (lock) { try { await lock.release(); } catch (_) {} lock = null; btn.setAttribute("aria-pressed", "false"); return; }
+  try {
+    lock = await navigator.wakeLock.request("screen");
+    btn.setAttribute("aria-pressed", "true");
+    lock.addEventListener("release", () => { lock = null; btn.setAttribute("aria-pressed", "false"); });
+  } catch (_) { btn.querySelector(".lbl").textContent = "Écran allumé : non disponible ici"; }
+});
+
+tick();
+</script>
+
+</body>
+</html>
