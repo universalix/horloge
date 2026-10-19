@@ -197,6 +197,8 @@ body.opt-halves:not(.inMode) #minBadge.onMark { display: none; }
 @media (prefers-reduced-motion: reduce) { .readout { transition: none; } }
 .optNote { margin: 0 4px; font-size: 0.95rem; line-height: 1.5; color: var(--muted); letter-spacing: 0.02em; }
 .resetBtn { width: 100%; padding: 12px; border-radius: 12px; font-size: 1.05rem; color: var(--hour); background: var(--bg); border-color: var(--track); margin-top: 4px; }
+.avisBtn { display: block; text-align: center; width: 100%; box-sizing: border-box; padding: 13px; border-radius: 12px; font-size: 1.05rem; font-weight: 700; text-decoration: none; background: var(--minute); color: var(--on-accent); margin-top: 6px; }
+.avisBtn:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
 .helpAgain { color: var(--fg); margin-top: 0; }
 #doneRing { display: none; }
 body.done #doneRing { display: inline; animation: donePulse 1.4s ease-in-out infinite; }
@@ -370,6 +372,7 @@ button.toggle[aria-pressed="true"] { border-color: var(--track); }
       <button id="wakeBtn" type="button" class="toggle" aria-pressed="false"><span class="lbl">Garder l'écran allumé</span><span class="sw" aria-hidden="true"></span></button>
       <p class="optNote">Empêche l'iPhone de se mettre en veille tant que l'horloge est ouverte, pour suivre un temps restant sans toucher l'écran. Consomme de la batterie : à utiliser de préférence branché. Se désactive à chaque fermeture de l'horloge.</p>
     </div>
+    <a class="avisBtn" href="https://grist.numerique.gouv.fr/o/docs/forms/x3tDAPh2KcFpDEz842k1mf/4" target="_blank" rel="noopener">Donner mon avis sur l'horloge</a>
     <button id="resetBtn" type="button" class="resetBtn">Réinitialiser les paramètres</button>
     <h3>Mode d'emploi</h3>
     <button id="helpAgain" type="button" class="resetBtn helpAgain">Revoir l'aide de démarrage</button>
